@@ -1,0 +1,101 @@
+pPAP: plant PKS Analysis and Prediction
+=============================================
+
+This directory contains a following file:
+ppap.tar.gz: gzipped tar archive of pPAP
+
+# Introduction
+
+pPAP is a functional prediction tool for plant type III polyketide synthases (PKSs). [1]
+The predicted functions are represented by "reaction types" defined by Shimizu et al. [2]
+The reaction types consist of three features of reactions catalyzed by the PKSs:
+
+(i) the starter substrate
+(ii) extended structure of the polyketide intermediate
+(iii) intramolecular cyclization
+
+pPAP assigns each sequence of a query to one of four reaction types: R-4-A, R-4-C, R-2-X, or other.
+
+
+# Reaction types used in pPAP
+
+Reaction type:	R-4-A
+Definition:	Ring-starter	4 methylenecarbonyl units in the intermediate	aldol cyclizaiton
+Example of PKSs:	Stilebene synthase, Biphenyl synthase, and Bibenzyl synthase
+Example of products:	Resveratrol, 3,5-Dihydroxybiphenyl, and 3,3',5-Trihydroxybibenzyl
+
+Reaction type:	R-4-C
+Definition:	Ring-starter	4 methylenecarbonyl units in the intermediate	Claisen cyclizaiton
+Example of PKSs:	Chalcone synthase, Benzophenone synthase, and Homoeriodictyol/eriodictyol synthase
+Example of products:	Naringenin chalcone, 2,4,6-Trihydroxybenzophenone, and Homoeriodictyol/eriodictyol
+
+Reaction type:	R-2-X
+Definition:	Ring-starter	2 methylenecarbonyl units in the intermediate	no cyclizaiton
+Example of PKSs:	Benzalacetone synthase, Diketide-CoA synthase, and Curcumin synthase
+Example of products:	p-Hydroxybenzalacetone, Feruloyldiketide-CoA, and Curcumin
+
+Reaction type:	Other
+Definition:	Other types than R-4-A, R-4-C, and R-2-X (e.g., Rn-4-Cn, Sb-4-C, Sc-7-A+, L-4-A, and etc.)
+Example of PKSs:	Acridone synthase, Phlorisovalerophenone synthase, Aloesone synthase, Alkylresorcinol synthase, and etc.
+Example of products:	1,3-Dihydroxy-N-methylacridone, Phlorisovalerophenone, Aloesone, Tetraketide alkylresorcinol, and etc.
+
+
+# Requirement
+
+pPAP is written in Ruby language.
+This tool is intended for use on a Linux operating system and requires the following programs:
+
+ruby >= 1.9.3	# Ruby language
+bioruby >= 1.5.0	# Bioinformatics library for Ruby
+mafft >= 7.270	# Multiple sequence alignment program
+hmmer >= 3.1b2	# Analysis using profile hidden Markov models
+
+
+# Set up
+
+Install all the requisite programs and set PATH so that your shell can use them.
+
+Extract the archive file "ppap.tar.gz"
+% tar zxfv ppap.tar.gz
+
+Then, the following directories and files will be created:
+
+ppap/	
+  ppap.rb	# Main program
+  calculate_score_correlated_res_pair_ACX.rb	# Script for calculating correlation scores
+  calculate_score_hmm_ACX.rb	# Script for calculating HMM scores
+  LICENSE	# GNU GPL License Version 3
+  README	# This file
+ppap/data/	# Directory including 15 data files
+
+
+# Usage
+
+% ruby ppap.rb FASTA_FILE
+
+FASTA_FILE: a query amino acid sequence file in (multi) FASTA format.
+
+# Changelog
+
+Ver. 1.1 (2018/12/13)
+  Update for new version of MAFFT
+
+Ver. 1.0 (2017/1/25)
+  First released version
+
+# License
+
+Copyright (c) 2016 Yugo Shimizu
+Bioinformatics Center, Institute for Chemical Research, Kyoto University
+pPAP is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation, either version 3 of the License, or any later version.
+A copy of the GNU General Public License Version 3 is included in the archive as "LICENSE".
+
+# References
+
+[1] Shimizu,Y. et al. (2017) Discriminating the reaction types of plant type III polyketide synthases. Bioinformatics, 33, 1937-1943.
+
+[2] Shimizu,Y. et al. (2017) Type III polyketide synthases: functional classification and phylogenomics. ChemBioChem, 18, 50-65.
+
+=============================================
+Last update: 2018/12/13
