@@ -43,6 +43,7 @@ Example of products:	1,3-Dihydroxy-N-methylacridone, Phlorisovalerophenone, Aloe
 # macOS installation and usage
 
 $ brew install mafft hmmer
+$ # gem install bundler -v 1.17.3   # for Ruby 1.9.3
 $ bundle install
 $ bundle exec ruby ppap.rb some.fas
 

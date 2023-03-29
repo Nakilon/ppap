@@ -4,10 +4,10 @@ GEM
     bio (2.0.4)
 
 PLATFORMS
-  x86_64-darwin-18
+  ruby
 
 DEPENDENCIES
   bio (>= 1.5.0)
 
 BUNDLED WITH
-   2.3.25
+   1.17.3
