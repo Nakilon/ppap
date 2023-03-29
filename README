@@ -40,6 +40,13 @@ Example of PKSs:	Acridone synthase, Phlorisovalerophenone synthase, Aloesone syn
 Example of products:	1,3-Dihydroxy-N-methylacridone, Phlorisovalerophenone, Aloesone, Tetraketide alkylresorcinol, and etc.
 
 
+# macOS installation and usage
+
+$ brew install mafft hmmer
+$ bundle install
+$ bundle exec ruby ppap.rb some.fas
+
+
 # Requirement
 
 pPAP is written in Ruby language.
@@ -60,7 +67,7 @@ Extract the archive file "ppap.tar.gz"
 
 Then, the following directories and files will be created:
 
-ppap/	
+ppap/
   ppap.rb	# Main program
   calculate_score_correlated_res_pair_ACX.rb	# Script for calculating correlation scores
   calculate_score_hmm_ACX.rb	# Script for calculating HMM scores
